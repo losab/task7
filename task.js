@@ -216,5 +216,15 @@ n < 10 -> n
     if (n === 0) return 0;
     return (n % 10) + sumOfDigits(Math.floor(n / 10));
   }
-  console.log(sumOfDigits(1312)); 
+    console.log(sumOfDigits(1312)); 
+
+    function sumOfDigits(n) {
+    let converted = '' + n;
+    let splitted = converted.split('');
+    return splitted.reduce((acc,cur) => {
+    return acc = acc + +cur; 
+     },0)
+        }
+    console.log(sumOfDigits(7777))
+    
   
