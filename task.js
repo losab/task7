@@ -212,10 +212,9 @@ hint : 15670
 n < 10 -> n 
 */
 
-function sumOfDigits (n) {
-    if(n < 10) {
-        return n
-    } else {
-        
-    }
-}
+    function sumOfDigits(n) {
+    if (n === 0) return 0;
+    return (n % 10) + sumOfDigits(Math.floor(n / 10));
+  }
+  console.log(sumOfDigits(1312)); 
+  
