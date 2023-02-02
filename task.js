@@ -78,7 +78,36 @@ arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 უმჯობესია გამოიყენოთ reduce მეთოდი
 
 */
+    function mode(array)
+    {
+        if(array.length == 0)
+            return null;
+        var modeMap = {};
+        var maxEl = array[0], maxCount = 1;
+        for(var i = 0; i < array.length; i++)
+        {
+            var el = array[i];
+            if(modeMap[el] == null)
+                modeMap[el] = 1;
+            else
+                modeMap[el]++;  
+            if(modeMap[el] > maxCount)
+            {
+                maxEl = el;
+                maxCount = modeMap[el];
+            }
+        }
+        return maxEl;
+    }
+    let newArr=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    console.log(mode(newArr));
 
+    const counted = mode(newArr);
+    const counts = {};
+    for (const num of newArr) {
+    counts[num] = counts[num] ? counts[num] + 1 : 1;
+    }
+    console.log(counts[counted]);
 
 
 /*
@@ -95,7 +124,7 @@ let arr1 = [1,2,3];
     let arr2 = [2,1,30];
     let arr3 = arr1.concat(arr2);
     let unique = [...new Set(arr3)];
-    console.log(unique)
+    console.log(unique);
 
 /*
 Task 7 : 
